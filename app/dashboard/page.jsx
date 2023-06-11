@@ -6,12 +6,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const Dashboard = () => {
-  const router = useRouter();
   const user = useSelector((state) => state);
-
-  if (user?.authUser?.data?.name == "undefined") {
-    router.push("/");
-  }
 
   const publicRepo = user?.authUser?.data?.public_repos;
   const privateRepo = user?.authUser?.data?.total_private_repos;
