@@ -8,7 +8,7 @@ export const authOptions = NextAuth({
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
   ],
-  secret: process.env.NEXTAUTH_SECRET, // Required secret key. Change this to something secret.
+  secret: process.env.NEXT_PUBLIC_SECRET, // Required secret key. Change this to something secret.
   callbacks: {
     async session({ session, token, user }) {
       session.user.id = token.id;
