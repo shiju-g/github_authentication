@@ -70,7 +70,7 @@ const GithubRepos = ({ userName, totalRepo, publicRepo, privateRepo }) => {
         {rederData &&
           rederData.map((repo) => (
             <div
-              className="bg-white w-full md:flex md:flex-row flex-col md:items-center md:justify-between rounded-md border-b mb-2 shadow-sm drop-shadow-sm border-gray-100 px-5 py-3"
+              className="bg-white w-full md:flex md:flex-row flex-col md:items-center md:justify-between rounded-md border-b mb-2 shadow-sm drop-shadow-sm border-gray-100 sm:px-5 px-2 py-3"
               key={repo.id}
             >
               <h2 className="lg:text-2xl text-inherit  md:text-xl font-bold text-gray-700">
