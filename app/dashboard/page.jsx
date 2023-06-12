@@ -1,6 +1,8 @@
 "use client";
 
+import DashboardHeader from "@/components/DashboardHeader";
 import GithubRepos from "@/components/GithubRepos";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { useSelector } from "react-redux";
@@ -14,13 +16,17 @@ const Dashboard = () => {
 
   return (
     <div className="bg-gray-100 pb-4 min-h-screen">
-      <header className="p-5 fixed z-50 top-0 left-0 w-full shadow  bg-white ">
-        <h1 className="font-semibold text-xl text-center">
-          Welcome to Dashboard
-        </h1>
-      </header>
+      <DashboardHeader />
+      <div className=" mt-16 sm:pt-10 pt-8 pb-8   w-11/12 mx-auto md:text-right text-center ">
+        <Link
+          className="bg-black font-semibold text-lg   duration-200 border-2 border-black rounded-lg p-3 text-white hover:bg-white hover:text-black "
+          href="/dashboard/trending_repos"
+        >
+          View Trending Repos
+        </Link>
+      </div>
 
-      <div className="lg:flex mt-16 sm:pt-10 pt-5  lg:w-10/12 w-11/12 mx-auto">
+      <div className="lg:flex lg:w-10/12 w-11/12 mx-auto">
         <div className="lg:w-96  w-full h-full">
           <h1 className="text-center mb-2 text-lg font-medium">
             Profile Details

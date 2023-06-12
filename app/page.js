@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginIn } from "@/redux/features/auth-user";
 import Link from "next/link";
+import { trendingrReposAdd } from "@/redux/features/trending-repos";
 
 export default function Home() {
   const { status } = useSession();
@@ -13,27 +14,43 @@ export default function Home() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state);
 
+  const fetchData = async () => {
+    const session = await getSession();
+
+    const response = await fetch("https://api.github.com/user", {
+      headers: {
+        Authorization: `Bearer ${session?.accessToken}`,
+      },
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      dispatch(loginIn(data));
+    } else {
+      console.error("Error fetching GitHub username:", response.statusText);
+    }
+  };
+
+  const fetchTrending = async () => {
+    const response = await fetch(
+      "https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&order=desc"
+    );
+    if (response.ok) {
+      const data = await response.json();
+      dispatch(trendingrReposAdd(data));
+    } else {
+      console.error(
+        "Error fetching GitHub trending repos:",
+        response.statusText
+      );
+    }
+  };
+
   useEffect(() => {
     setGitHubStatus(status);
 
-    const fetchData = async () => {
-      const session = await getSession();
-
-      const response = await fetch("https://api.github.com/user", {
-        headers: {
-          Authorization: `Bearer ${session?.accessToken}`,
-        },
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        dispatch(loginIn(data));
-      } else {
-        console.error("Error fetching GitHub username:", response.statusText);
-      }
-    };
-
     fetchData();
+    fetchTrending();
   }, [status]);
 
   return (
