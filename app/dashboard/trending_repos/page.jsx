@@ -22,7 +22,7 @@ const Trend = () => {
         {trend &&
           trend.map((repo, i) => (
             <div
-              className="cursor-pointer bg-white w-full rounded-md border-b mb-2 shadow-sm drop-shadow-sm border-gray-100 sm:px-5 px-2 py-3 "
+              className="cursor-pointer duration-300 bg-white w-full rounded-md border-b mb-2 shadow-sm drop-shadow-sm border-gray-100 sm:px-5 px-2 py-3 "
               onClick={() =>
                 setDetails((prev) => {
                   return { id: repo.id, data: !prev.data };
