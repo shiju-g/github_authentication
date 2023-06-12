@@ -25,3 +25,5 @@ Feel free to explore the codebase and make it your own. Enjoy!
 ![screen 3](/public/screen3.png) Three
 ![screen 4](/public/screen4.png) Four
 ![screen 5](/public/screen5.png) Five
+![screen 5](/public/screen6.png) Six
+![screen 5](/public/screen7.png) Seven
