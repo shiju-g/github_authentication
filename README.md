@@ -16,6 +16,8 @@ and intuitive user interface.
 For secure authentication, an API has been created using Next.js to handle the
 authentication process. Redux Toolkit is employed for efficient state management throughout the application.
 
+I recently updated my project to use the GitHub API to fetch trending repositories. I then set the trending repositories in the Redux store and rendered them on the trending repository page in the dashboard. I have attached a screenshot below.
+
 Feel free to explore the codebase and make it your own. Enjoy!
 
 ## Screenshots
@@ -25,5 +27,5 @@ Feel free to explore the codebase and make it your own. Enjoy!
 ![screen 3](/public/screen3.png) Three
 ![screen 4](/public/screen4.png) Four
 ![screen 5](/public/screen5.png) Five
-![screen 5](/public/screen6.png) Six
-![screen 5](/public/screen7.png) Seven
+![screen 6](/public/screen6.png) Six
+![screen 7](/public/screen7.png) Seven
